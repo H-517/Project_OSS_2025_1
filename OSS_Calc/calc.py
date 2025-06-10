@@ -19,7 +19,7 @@ class Calculator:
             ['4', '5', '6', '*'],
             ['1', '2', '3', '-'],
             ['0', '.', 'C', '+'],
-            ['=']
+            ['1/x', '=']
         ]
 
         for row in buttons:
@@ -40,6 +40,11 @@ class Calculator:
         elif char == '=':
             try:
                 self.expression = str(eval(self.expression))
+            except Exception:
+                self.expression = "에러"
+        elif char == '1/x':
+            try:
+                self.expression = str(1 / eval(self.expression))
             except Exception:
                 self.expression = "에러"
         else:
