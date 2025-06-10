@@ -23,5 +23,9 @@ class Budget:
     def total_spent(self):
         total = sum(e.amount for e in self.expenses)
         print(f"총 지출: {total}원\n")
-
-
+        
+    def save_to_file(self):
+    with open("지출_목록.txt", "w", encoding="utf-8") as f:
+        for e in self.expenses:
+            f.write(str(e) + "\n")
+    print("지출 내역이 '지출_목록.txt'로 저장되었습니다.\n")
